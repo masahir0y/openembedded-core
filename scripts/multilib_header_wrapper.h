@@ -16,7 +16,11 @@
 #elif defined (__aarch64__)
 #define __MHWORDSIZE			32
 #else
+#if defined(__GLIBC__)
 #include <bits/wordsize.h>
+#else
+#include <bits/reg.h>
+#endif
 #if defined (__WORDSIZE)
 #define __MHWORDSIZE			__WORDSIZE
 #else

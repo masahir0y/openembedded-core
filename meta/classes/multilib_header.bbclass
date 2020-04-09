@@ -6,13 +6,6 @@ inherit siteinfo
 # all of the ABI variants for that given architecture.
 #
 oe_multilib_header() {
-
-	case ${HOST_OS} in
-	*-musl*)
-		return
-		;;
-	*)
-	esac
         # For MIPS: "n32" is a special case, which needs to be
         # distinct from both 64-bit and 32-bit.
         case ${TARGET_ARCH} in
